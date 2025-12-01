@@ -1,0 +1,285 @@
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 25px;
+  background: #ffffffc9;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px #0003;
+  transition: 0.4s;
+}
+
+/* DARK MODE */
+.wrapper.dark {
+  background: #111827cc;
+  color: white;
+  box-shadow: 0 0 25px #0008;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.mode-btn {
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-box input {
+  width: 260px;
+  padding: 12px;
+  border-radius: 30px;
+  border: 2px solid #0077ff;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.search-btn,
+.mic-btn {
+  border: none;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  padding: 12px 16px;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* ERROR */
+.error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ALERT */
+.alert {
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* CURRENT CARD */
+.current-card {
+  margin-top: 25px;
+  padding: 20px;
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(45deg, #007bff, #00e0ff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: fadeIn 0.6s ease;
+}
+
+.wrapper.dark .current-card {
+  background: #1f2937;
+  color: white;
+  background-image: none;
+}
+
+/* Animated Temperature Bar */
+.temp-bar {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.temp-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+/* Best Time */
+.best-time {
+  background: #00bfff;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+/* Daily Summary */
+.daily-summary {
+  margin-top: 15px;
+  background: #00bfffcc;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* FORECAST */
+.forecast-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.forecast-card {
+  background: white;
+  width: 150px;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: 0.4s;
+  border-top: 4px solid #00b0ff;
+  position: relative;
+  overflow: hidden;
+}
+
+.forecast-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #007bff, #00d4ff, #00ffc3, #007bff);
+  opacity: 0.15;
+  transform: rotate(25deg);
+}
+
+.forecast-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Temperature color-coded */
+.forecast-temp.cold { color: #1E90FF; }
+.forecast-temp.mild { color: #00BFFF; }
+.forecast-temp.warm { color: #FF8C00; }
+.forecast-temp.hot { color: #FF4500; }
+
+/* Alert forecast card */
+.alert-card {
+  border: 3px solid red;
+}
+
+/* Dark Mode Forecast */
+.wrapper.dark .forecast-card {
+  background: #1f2937;
+  color: white;
+  border-top: 4px solid #00e0ff;
+}
+
+.wrapper.dark .forecast-card::before {
+  opacity: 0.08;
+}
+
+/* CHART */
+.chart-box {
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #0002;
+}
+
+.wrapper.dark .chart-box {
+  background: #1f2937;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+/* Scrollbar styling */
+.forecast-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.forecast-container::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 20px;
+}
+
+.forecast-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 20px;
+}
+
+/* Improved Readability */
+.current-card h2, .forecast-card h4, .forecast-card p, .best-time {
+  font-size: 1.1rem;
+}
+
+.forecast-title, .chart-title {
+  font-size: 1.3rem;
+  margin-top: 20px;
+}
+/* Icon Legend */
+.icon-legend {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.icon-legend div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon-legend img {
+  width: 24px;
+  height: 24px;
+}
+
