@@ -1,0 +1,15 @@
+// Day 1: Placeholder script
+// (We'll add interactivity tomorrow)
+
+console.log("Weather Dashboard Day 1: Script linked successfully!");
+
+const searchBtn = document.getElementById("searchBtn");
+searchBtn.addEventListener("click", () => {
+  const city = document.getElementById("cityInput").value.trim();
+  if (city === "") {
+    alert("Please enter a city name.");
+  } else {
+    document.querySelector(".placeholder-text").textContent =
+      `Searching for weather in ${city}...`;
+  }
+});
